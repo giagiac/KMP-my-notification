@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "172716629840",
+    "project_id": "testfcm-aa7ce",
+    "storage_bucket": "testfcm-aa7ce.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:172716629840:android:071cd9a3d3253284135655",
+        "android_client_info": {
+          "package_name": "com.mmk.kmpnotifier.sample"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDXBzo2YHmjMHhRwwala3a6k6T3LYCpWIs"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:172716629840:android:8fe91e64e31ebe4a135655",
+        "android_client_info": {
+          "package_name": "org.giacomo.mynotification"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDXBzo2YHmjMHhRwwala3a6k6T3LYCpWIs"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
