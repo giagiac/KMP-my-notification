@@ -2,11 +2,13 @@ import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.padding
+import androidx.compose.material.Button
 import androidx.compose.material.MaterialTheme
 import androidx.compose.material.Text
 import androidx.compose.runtime.*
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.dp
 import com.mmk.kmpnotifier.notification.NotifierManager
 import org.jetbrains.compose.ui.tooling.preview.Preview
@@ -23,7 +25,7 @@ fun App() {
                 println("onNewToken: $token")
             }
         })
-        // myPushNotificationToken = NotifierManager.getPushNotifier().getToken() ?: ""
+        myPushNotificationToken = NotifierManager.getPushNotifier().getToken() ?: ""
     }
 
 
@@ -33,40 +35,40 @@ fun App() {
             horizontalAlignment = Alignment.CenterHorizontally,
             verticalArrangement = Arrangement.Center
         ) {
-//            val notifier = remember { NotifierManager.getLocalNotifier() }
-//            val permissionUtil = remember { NotifierManager.getPermissionUtil() }
-//            var notificationId by remember { mutableStateOf(0) }
-//            Button(onClick = {
-//                notificationId = notifier.notify("Title", "bodyMessage")
-//            }) {
-//                Text("Send Local Notification")
-//            }
-//            Button(onClick = { notifier.removeAll() }) {
-//                Text("Remove all notifications")
-//            }
-//
-//            Button(enabled = notificationId != 0, onClick = {
-//                notifier.remove(notificationId)
-//                notificationId = 0
-//            }) {
-//                Text("Remove NotificationID #$notificationId")
-//            }
-//
-//            Text(
-//                modifier = Modifier.padding(20.dp),
-//                text = "FirebaseToken: $myPushNotificationToken",
-//                style = MaterialTheme.typography.body1,
-//                textAlign = TextAlign.Start,
-//            )
-//
-//
-//            Button(onClick = {
-//                permissionUtil.askNotificationPermission {
-//                    println("Permission is granted")
-//                }
-//            }) {
-//                Text("Ask permission")
-//            }
+            val notifier = remember { NotifierManager.getLocalNotifier() }
+            val permissionUtil = remember { NotifierManager.getPermissionUtil() }
+            var notificationId by remember { mutableStateOf(0) }
+            Button(onClick = {
+                notificationId = notifier.notify("Title", "bodyMessage")
+            }) {
+                Text("Send Local Notification")
+            }
+            Button(onClick = { notifier.removeAll() }) {
+                Text("Remove all notifications")
+            }
+
+            Button(enabled = notificationId != 0, onClick = {
+                notifier.remove(notificationId)
+                notificationId = 0
+            }) {
+                Text("Remove NotificationID #$notificationId")
+            }
+
+            Text(
+                modifier = Modifier.padding(20.dp),
+                text = "FirebaseToken: $myPushNotificationToken",
+                style = MaterialTheme.typography.body1,
+                textAlign = TextAlign.Start,
+            )
+
+
+            Button(onClick = {
+                permissionUtil.askNotificationPermission {
+                    println("Permission is granted")
+                }
+            }) {
+                Text("Ask permission")
+            }
 
             Text("Hello World")
         }
